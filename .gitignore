@@ -33,3 +33,6 @@ fp-info-cache
 
 # Freecad backup
 *.FCBak
+
+#Doc folder
+/Docs
