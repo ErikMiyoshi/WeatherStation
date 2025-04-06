@@ -1,4 +1,4 @@
-(footprint "mounting_hole_1.5"
+(footprint "mounting_hole_2"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -15,7 +15,7 @@
 			)
 		)
 	)
-	(property "Value" "mounting_hole_1.5"
+	(property "Value" "mounting_hole_2"
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
@@ -90,8 +90,8 @@
 	)
 	(pad "" thru_hole circle
 		(at 0 0)
-		(size 3 3)
-		(drill 1.5)
+		(size 4 4)
+		(drill 2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "c5995c4d-d078-41d4-a0a6-179810d8f6d4")

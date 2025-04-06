@@ -36,3 +36,6 @@ fp-info-cache
 
 #Doc folder
 /Docs
+
+#Prod files
+*/production
