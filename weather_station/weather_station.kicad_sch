@@ -5797,7 +5797,7 @@
 		)
 		(uuid "67f07fd5-81f0-443d-ac93-ca9701e84398")
 	)
-	(text "Vout = 3.07V"
+	(text "Vout = 3.12V"
 		(exclude_from_sim no)
 		(at 141.986 26.67 0)
 		(effects
@@ -5946,6 +5946,12 @@
 		(uuid "894518f5-9ecd-4d80-8808-9489b565b57e")
 	)
 	(junction
+		(at 133.35 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89a410c9-f370-4bb0-a837-c82de39fc37e")
+	)
+	(junction
 		(at 54.61 27.94)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6064,12 +6070,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f3700954-7258-4ec7-8fe2-eec79379d2ab")
-	)
-	(junction
-		(at 140.97 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fd5d9204-5c8f-40f6-aa77-2539d27d8fb9")
 	)
 	(junction
 		(at 227.33 33.02)
@@ -6327,6 +6327,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 31.75) (xy 133.35 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e545a66-48cb-4007-91da-91d615698811")
+	)
+	(wire
+		(pts
 			(xy 269.24 113.03) (xy 269.24 114.3)
 		)
 		(stroke
@@ -6457,7 +6467,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 33.02) (xy 128.27 33.02)
+			(xy 127 33.02) (xy 133.35 33.02)
 		)
 		(stroke
 			(width 0)
@@ -6604,16 +6614,6 @@
 			(type default)
 		)
 		(uuid "217b4f98-9ce1-4e19-b68b-56e4f7f5f74b")
-	)
-	(wire
-		(pts
-			(xy 128.27 38.1) (xy 140.97 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21ee3545-3b4b-47aa-bf2f-c079e1dad960")
 	)
 	(wire
 		(pts
@@ -6917,16 +6917,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 38.1) (xy 140.97 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e9cb97f-a4bb-455b-9256-fb46b1fae6fe")
-	)
-	(wire
-		(pts
 			(xy 190.5 33.02) (xy 190.5 29.21)
 		)
 		(stroke
@@ -7154,16 +7144,6 @@
 			(type default)
 		)
 		(uuid "5058d25b-aec4-44f1-a6eb-7c11ce1eef2e")
-	)
-	(wire
-		(pts
-			(xy 133.35 31.75) (xy 133.35 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "509c8b93-5bcb-4e05-ab6d-8f32503f56c3")
 	)
 	(wire
 		(pts
@@ -7577,16 +7557,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 34.29) (xy 140.97 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e6bc7bd-2ac1-4fe1-aae1-4bc8be28aa65")
-	)
-	(wire
-		(pts
 			(xy 224.79 66.04) (xy 231.14 66.04)
 		)
 		(stroke
@@ -7957,16 +7927,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 33.02) (xy 128.27 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b2fa210-e014-423e-b487-50a4c06fbf6a")
-	)
-	(wire
-		(pts
 			(xy 101.6 39.37) (xy 101.6 40.64)
 		)
 		(stroke
@@ -8154,6 +8114,16 @@
 			(type default)
 		)
 		(uuid "994259ad-5546-468a-a0c8-9496d3dad896")
+	)
+	(wire
+		(pts
+			(xy 133.35 33.02) (xy 133.35 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b8976ed-8395-4f16-970b-87af7ac18617")
 	)
 	(wire
 		(pts
@@ -8544,6 +8514,16 @@
 			(type default)
 		)
 		(uuid "c049f050-226f-4410-9b6b-1e1487e8e53d")
+	)
+	(wire
+		(pts
+			(xy 140.97 38.1) (xy 140.97 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3edf206-8847-4184-8d43-7e82900f4a8e")
 	)
 	(wire
 		(pts
@@ -9797,7 +9777,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-07100KL_C14675.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.html?s_z=n_C25803"
 			(at 140.97 43.18 90)
 			(effects
 				(font
@@ -9806,7 +9786,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C14675"
+		(property "LCSC Part #" "C25803"
 			(at 140.97 43.18 0)
 			(effects
 				(font
@@ -10119,7 +10099,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 259.842 32.766 0)
 			(effects
 				(font
@@ -10277,7 +10257,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_XINGLIGHT-XL-1608SURC-06_C965799.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_Hubei-KENTO-Elec-KT-0603R_C2286.html?s_z=n_%2520C2286"
 			(at 91.44 88.9 0)
 			(effects
 				(font
@@ -10286,7 +10266,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C965799"
+		(property "LCSC Part #" " C2286"
 			(at 91.44 88.9 0)
 			(effects
 				(font
@@ -10558,7 +10538,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 260.35 67.31 90)
 			(effects
 				(font
@@ -10567,7 +10547,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 260.35 67.31 0)
 			(effects
 				(font
@@ -10965,7 +10945,7 @@
 				)
 			)
 		)
-		(property "Value" "47k5"
+		(property "Value" "47k"
 			(at 39.878 140.97 90)
 			(effects
 				(font
@@ -11000,7 +10980,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FOJAN-FRC0603F4752TS_C2933225.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF4702T5E_C25819.html?s_z=n_C25819"
 			(at 35.56 140.97 90)
 			(effects
 				(font
@@ -11009,7 +10989,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C2933225"
+		(property "LCSC Part #" "C25819"
 			(at 35.56 140.97 0)
 			(effects
 				(font
@@ -11248,7 +11228,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAYNNNE_C602037.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.html?s_z=n_%2520C45783"
 			(at 242.57 153.67 0)
 			(effects
 				(font
@@ -11265,7 +11245,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C602037"
+		(property "LCSC Part #" " C45783"
 			(at 242.57 153.67 0)
 			(effects
 				(font
@@ -11409,7 +11389,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0712KL_C114659.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1202T5E_C22790.html?s_z=n_C22790"
 			(at 105.41 185.42 90)
 			(effects
 				(font
@@ -11418,7 +11398,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C114659"
+		(property "LCSC Part #" "C22790"
 			(at 105.41 185.42 0)
 			(effects
 				(font
@@ -11560,7 +11540,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.html?s_z=n_C23186"
 			(at 52.07 35.56 90)
 			(effects
 				(font
@@ -11844,7 +11824,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Schottky-Diodes_GOODWORK-SS14_C2986110.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Schottky-Diodes_MDD-Microdiode-Semiconductor-SS14_C2480.html?s_z=n_C2480"
 			(at 73.66 27.94 0)
 			(effects
 				(font
@@ -11853,7 +11833,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C2986110"
+		(property "LCSC Part #" "C2480"
 			(at 73.66 27.94 0)
 			(effects
 				(font
@@ -11930,7 +11910,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Schottky-Diodes_GOODWORK-SS14_C2986110.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Schottky-Diodes_MDD-Microdiode-Semiconductor-SS14_C2480.html?s_z=n_C2480"
 			(at 64.77 20.32 0)
 			(effects
 				(font
@@ -11939,7 +11919,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C2986110"
+		(property "LCSC Part #" "C2480"
 			(at 64.77 20.32 0)
 			(effects
 				(font
@@ -12092,7 +12072,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 74.422 110.236 0)
 			(effects
 				(font
@@ -12185,6 +12165,91 @@
 			(project "weather_station"
 				(path "/a407d53c-f85b-4c33-a674-4a82877d942f"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 137.16 38.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "234129e3-7849-48e1-830a-0b85cacdbc0c")
+		(property "Reference" "R5"
+			(at 137.16 35.814 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12k"
+			(at 137.16 33.782 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 137.16 36.322 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 137.16 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 137.16 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1202T5E_C22790.html?s_z=n_C22790"
+			(at 137.16 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part #" "C22790"
+			(at 137.16 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1acf44fe-ea40-46c3-9274-6c05c17633c2")
+		)
+		(pin "2"
+			(uuid "35996517-e115-47e2-9513-853afb1f570a")
+		)
+		(instances
+			(project "weather_station"
+				(path "/a407d53c-f85b-4c33-a674-4a82877d942f"
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -12372,7 +12437,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 90.17 148.59 90)
 			(effects
 				(font
@@ -12381,7 +12446,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 90.17 148.59 0)
 			(effects
 				(font
@@ -12657,7 +12722,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAYNNNE_C602037.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.html?s_z=n_%2520C45783"
 			(at 149.86 33.02 0)
 			(effects
 				(font
@@ -12674,7 +12739,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C602037"
+		(property "LCSC Part #" " C45783"
 			(at 149.86 33.02 0)
 			(effects
 				(font
@@ -12750,7 +12815,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0712KL_C114659.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1202T5E_C22790.html?s_z=n_C22790"
 			(at 240.03 59.69 90)
 			(effects
 				(font
@@ -12759,7 +12824,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C114659"
+		(property "LCSC Part #" "C22790"
 			(at 240.03 59.69 0)
 			(effects
 				(font
@@ -12835,7 +12900,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 138.43 90.17 90)
 			(effects
 				(font
@@ -12844,7 +12909,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 138.43 90.17 0)
 			(effects
 				(font
@@ -12929,7 +12994,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_XINGLIGHT-XL-1608SURC-06_C965799.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_Hubei-KENTO-Elec-KT-0603R_C2286.html?s_z=n_%2520C2286"
 			(at 91.44 83.82 0)
 			(effects
 				(font
@@ -12938,7 +13003,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C965799"
+		(property "LCSC Part #" " C2286"
 			(at 91.44 83.82 0)
 			(effects
 				(font
@@ -13146,7 +13211,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0712KL_C114659.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1202T5E_C22790.html?s_z=n_C22790"
 			(at 165.1 31.75 90)
 			(effects
 				(font
@@ -13155,7 +13220,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C114659"
+		(property "LCSC Part #" "C22790"
 			(at 165.1 31.75 0)
 			(effects
 				(font
@@ -13240,7 +13305,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_XINGLIGHT-XL-1608SURC-06_C965799.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_Hubei-KENTO-Elec-KT-0603R_C2286.html?s_z=n_%2520C2286"
 			(at 83.82 157.48 0)
 			(effects
 				(font
@@ -13249,7 +13314,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C965799"
+		(property "LCSC Part #" " C2286"
 			(at 83.82 157.48 0)
 			(effects
 				(font
@@ -13300,7 +13365,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias"
+		(property "Footprint" "weather_station_lib:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias_via_0.3mm"
 			(at 118.618 106.68 0)
 			(effects
 				(font
@@ -13499,7 +13564,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 135.89 90.17 90)
 			(effects
 				(font
@@ -13508,7 +13573,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 135.89 90.17 0)
 			(effects
 				(font
@@ -13783,7 +13848,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-070RL_C100044.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF0000T5E_C21189.html?s_z=n_C21189"
 			(at 85.09 124.46 90)
 			(effects
 				(font
@@ -13792,7 +13857,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C100044"
+		(property "LCSC Part #" "C21189"
 			(at 85.09 124.46 0)
 			(effects
 				(font
@@ -13844,7 +13909,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP2.7x2.7mm_ThermalVias"
+		(property "Footprint" "weather_station_lib:QFN-28-1EP_5x5mm_P0.5mm_EP2.7x2.7mm_ThermalVias_via_0.3mm"
 			(at 95.25 181.61 0)
 			(effects
 				(font
@@ -14521,7 +14586,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/MOSFETs_YONGYUTAI-SI2301_C2891731.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/MOSFETs_Alpha-Omega-Semicon-AO3401A_C15127.html?s_z=n_C15127"
 			(at 80.01 36.83 0)
 			(effects
 				(font
@@ -14530,7 +14595,7 @@
 				(hide yes)
 			)
 		)
-		(property "PN" "SI2301"
+		(property "PN" "AO3401A"
 			(at 75.946 33.528 0)
 			(effects
 				(font
@@ -14538,7 +14603,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C2891731"
+		(property "LCSC Part #" "C15127"
 			(at 80.01 36.83 0)
 			(effects
 				(font
@@ -14748,7 +14813,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-07100KL_C14675.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.html?s_z=n_C25803"
 			(at 158.75 77.47 90)
 			(effects
 				(font
@@ -14757,7 +14822,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C14675"
+		(property "LCSC Part #" "C25803"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -14798,7 +14863,7 @@
 				)
 			)
 		)
-		(property "Value" "390k"
+		(property "Value" "470k"
 			(at 97.028 40.64 90)
 			(effects
 				(font
@@ -14833,7 +14898,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF3903T5E_C23150.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF4703T5E_C23178.html?s_z=n_C23178"
 			(at 92.71 40.64 90)
 			(effects
 				(font
@@ -14842,7 +14907,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C23150"
+		(property "LCSC Part #" "C23178"
 			(at 92.71 40.64 0)
 			(effects
 				(font
@@ -15293,7 +15358,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 79.7052 110.49 0)
 			(effects
 				(font
@@ -15320,7 +15385,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10A475KA8NQNC_C69335.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A475KAQNNNE_C1779.html?s_z=n_%2520C1779"
 			(at 78.74 106.68 0)
 			(effects
 				(font
@@ -15337,7 +15402,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C69335"
+		(property "LCSC Part #" " C1779"
 			(at 78.74 106.68 0)
 			(effects
 				(font
@@ -15547,7 +15612,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAYNNNE_C602037.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.html?s_z=n_%2520C45783"
 			(at 168.91 118.11 0)
 			(effects
 				(font
@@ -15564,7 +15629,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C602037"
+		(property "LCSC Part #" " C45783"
 			(at 168.91 118.11 0)
 			(effects
 				(font
@@ -15706,7 +15771,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.html?s_z=n_C23186"
 			(at 52.07 33.02 90)
 			(effects
 				(font
@@ -15894,7 +15959,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 179.832 27.686 0)
 			(effects
 				(font
@@ -16044,7 +16109,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-07100KL_C14675.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.html?s_z=n_C25803"
 			(at 158.75 87.63 90)
 			(effects
 				(font
@@ -16053,7 +16118,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C14675"
+		(property "LCSC Part #" "C25803"
 			(at 158.75 87.63 0)
 			(effects
 				(font
@@ -16271,7 +16336,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0712KL_C114659.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1202T5E_C22790.html?s_z=n_C22790"
 			(at 72.39 44.45 90)
 			(effects
 				(font
@@ -16280,7 +16345,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C114659"
+		(property "LCSC Part #" "C22790"
 			(at 72.39 44.45 0)
 			(effects
 				(font
@@ -16390,7 +16455,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "S8050"
+		(property "Value" "MMBT3904"
 			(at 121.92 186.6899 0)
 			(effects
 				(font
@@ -16429,7 +16494,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Bipolar-BJT_Guangdong-Hottech-S8050_C181158.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Bipolar-BJT_Jiangsu-Changjing-Electronics-Technology-Co-Ltd-MMBT3904-RANGE-100-300_C20526.html?s_z=n_C20526"
 			(at 116.84 185.42 0)
 			(effects
 				(font
@@ -16438,7 +16503,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C181158"
+		(property "LCSC Part #" "C20526"
 			(at 116.84 185.42 0)
 			(effects
 				(font
@@ -16585,7 +16650,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 260.35 45.72 90)
 			(effects
 				(font
@@ -16594,7 +16659,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 260.35 45.72 0)
 			(effects
 				(font
@@ -16681,7 +16746,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 259.842 53.086 0)
 			(effects
 				(font
@@ -16765,7 +16830,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 101.6 88.9 90)
 			(effects
 				(font
@@ -16774,7 +16839,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 101.6 88.9 0)
 			(effects
 				(font
@@ -17126,7 +17191,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_XINGLIGHT-XL-1608SURC-06_C965799.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/LED-Indication-Discrete_Hubei-KENTO-Elec-KT-0603R_C2286.html?s_z=n_%2520C2286"
 			(at 83.82 152.4 0)
 			(effects
 				(font
@@ -17135,7 +17200,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C965799"
+		(property "LCSC Part #" " C2286"
 			(at 83.82 152.4 0)
 			(effects
 				(font
@@ -17222,7 +17287,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 43.942 110.236 0)
 			(effects
 				(font
@@ -17338,7 +17403,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "S8050"
+		(property "Value" "MMBT3904"
 			(at 121.92 165.1001 0)
 			(effects
 				(font
@@ -17377,7 +17442,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Bipolar-BJT_Guangdong-Hottech-S8050_C181158.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Bipolar-BJT_Jiangsu-Changjing-Electronics-Technology-Co-Ltd-MMBT3904-RANGE-100-300_C20526.html?s_z=n_C20526"
 			(at 116.84 166.37 0)
 			(effects
 				(font
@@ -17386,7 +17451,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C181158"
+		(property "LCSC Part #" "C20526"
 			(at 116.84 166.37 0)
 			(effects
 				(font
@@ -17542,7 +17607,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 184.912 121.666 0)
 			(effects
 				(font
@@ -17723,7 +17788,7 @@
 				)
 			)
 		)
-		(property "Value" "22k1"
+		(property "Value" "22k"
 			(at 30.48 130.302 90)
 			(effects
 				(font
@@ -17758,7 +17823,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0722K1L_C137768.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF2202T5E_C31850.html?s_z=n_C31850"
 			(at 30.48 134.62 90)
 			(effects
 				(font
@@ -17767,7 +17832,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C137768"
+		(property "LCSC Part #" "C31850"
 			(at 30.48 134.62 0)
 			(effects
 				(font
@@ -17921,7 +17986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 275.082 112.776 0)
 			(effects
 				(font
@@ -18139,7 +18204,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603KRX7R9BB102_C100040.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10B102KB8NNNC_C1588.html?s_z=n_%2520C1588"
 			(at 240.03 72.39 0)
 			(effects
 				(font
@@ -18148,7 +18213,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 245.872 75.946 0)
 			(effects
 				(font
@@ -18156,7 +18221,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C100040"
+		(property "LCSC Part #" " C1588"
 			(at 240.03 72.39 0)
 			(effects
 				(font
@@ -18451,7 +18516,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 49.2252 110.49 0)
 			(effects
 				(font
@@ -18478,7 +18543,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10A475KA8NQNC_C69335.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A475KAQNNNE_C1779.html?s_z=n_%2520C1779"
 			(at 48.26 106.68 0)
 			(effects
 				(font
@@ -18495,7 +18560,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C69335"
+		(property "LCSC Part #" " C1779"
 			(at 48.26 106.68 0)
 			(effects
 				(font
@@ -18573,7 +18638,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAYNNNE_C602037.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.html?s_z=n_%2520C45783"
 			(at 259.08 109.22 0)
 			(effects
 				(font
@@ -18590,7 +18655,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C602037"
+		(property "LCSC Part #" " C45783"
 			(at 259.08 109.22 0)
 			(effects
 				(font
@@ -19333,7 +19398,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0712KL_C114659.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1202T5E_C22790.html?s_z=n_C22790"
 			(at 105.41 166.37 90)
 			(effects
 				(font
@@ -19342,7 +19407,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C114659"
+		(property "LCSC Part #" "C22790"
 			(at 105.41 166.37 0)
 			(effects
 				(font
@@ -19495,7 +19560,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 258.572 157.226 0)
 			(effects
 				(font
@@ -19673,7 +19738,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 101.6 83.82 90)
 			(effects
 				(font
@@ -19682,7 +19747,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 101.6 83.82 0)
 			(effects
 				(font
@@ -19802,91 +19867,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 137.16 34.29 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cb3f557d-89a4-40e8-80ee-dc98281ad43b")
-		(property "Reference" "R5"
-			(at 132.842 36.576 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22k1"
-			(at 137.922 36.576 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 137.16 36.068 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 137.16 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 137.16 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-0722K1L_C137768.html"
-			(at 137.16 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" "C137768"
-			(at 137.16 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "642ca751-0cf1-4ec2-a5b5-493ea65a7ce1")
-		)
-		(pin "2"
-			(uuid "bec5834d-b561-455b-b661-6165ad316b94")
-		)
-		(instances
-			(project "weather_station"
-				(path "/a407d53c-f85b-4c33-a674-4a82877d942f"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 165.1 45.72 0)
 		(unit 1)
@@ -19940,7 +19920,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603KRX7R9BB102_C100040.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10B102KB8NNNC_C1588.html?s_z=n_%2520C1588"
 			(at 165.1 45.72 0)
 			(effects
 				(font
@@ -19949,7 +19929,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 170.942 49.276 0)
 			(effects
 				(font
@@ -19957,7 +19937,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C100040"
+		(property "LCSC Part #" " C1588"
 			(at 165.1 45.72 0)
 			(effects
 				(font
@@ -20406,7 +20386,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-07470RL_C114669.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF4700T5E_C23179.html?s_z=n_C23179"
 			(at 85.09 121.92 90)
 			(effects
 				(font
@@ -20415,7 +20395,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C114669"
+		(property "LCSC Part #" "C23179"
 			(at 85.09 121.92 0)
 			(effects
 				(font
@@ -20632,7 +20612,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "25V"
+		(property "Voltage" "50V"
 			(at 259.842 74.676 0)
 			(effects
 				(font
@@ -21046,7 +21026,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 97.79 148.59 90)
 			(effects
 				(font
@@ -21055,7 +21035,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 97.79 148.59 0)
 			(effects
 				(font
@@ -21264,7 +21244,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 260.35 26.67 90)
 			(effects
 				(font
@@ -21273,7 +21253,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 260.35 26.67 0)
 			(effects
 				(font
@@ -21415,7 +21395,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0603FR-071KL_C22548.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.html?s_z=n_C21190"
 			(at 29.21 115.57 90)
 			(effects
 				(font
@@ -21424,7 +21404,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C22548"
+		(property "LCSC Part #" "C21190"
 			(at 29.21 115.57 0)
 			(effects
 				(font
@@ -21595,7 +21575,7 @@
 				)
 			)
 		)
-		(property "Value" "390k"
+		(property "Value" "470k"
 			(at 137.668 29.464 90)
 			(effects
 				(font
@@ -21630,7 +21610,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF3903T5E_C23150.html"
+		(property "LCSC Page" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF4703T5E_C23178.html?s_z=n_C23178"
 			(at 137.16 31.75 90)
 			(effects
 				(font
@@ -21639,7 +21619,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part #" "C23150"
+		(property "LCSC Part #" "C23178"
 			(at 137.16 31.75 0)
 			(effects
 				(font
