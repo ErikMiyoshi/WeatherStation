@@ -9144,6 +9144,24 @@
 				"AAAAAAAAAAAAAAAAYwQAAAAAAAB4twXavgIAAAE6AAAAAAAAOLYF2r4CAABkBAAAAAAAAHi3Bdq+"
 				"AgAAAToAAAAAAABYtgXavgIAAGUEAAAAAAAAeLcF2r4CAAABOgAAAAAAAHi2Bdq+AgAAZgQAAAAA"
 				"AAB4twXavgIAAAE6AAAAAAAAmLYF2r4CAABnBAAAAAAAAHi3Bdq+AgAAAToAAAAAAAC4tgXavgIA"
+				"AHAAcwA6AC8ALwB3AHcAdwAuAHcAYQBnAG8ALgBjAG8AbQAvAGcAbABvAGIAYQBsAC8AcABjAGIA"
+				"LQB0AGUAcgBtAGkAbgBhAGwALQBiAGwAbwBjAGsAcwAtAGEAbgBkAC0AcABsAHUAZwBnAGEAYgBs"
+				"AGUALQBjAG8AbgBuAGUAYwB0AG8AcgBzAC8AcABjAGIALQB0AGUAcgBtAGkAbgBhAGwALQBiAGwA"
+				"bwBjAGsALwBwAC8AMgA2ADAAMQAtADEAMQAxADAALAAgAHMAYwByAGkAcAB0AC0AZwBlAG4AZQBy"
+				"AGEAdABlAGQAIAB1AHMAaQBuAGcAIABoAHQAdABwAHMAOgAvAC8AZwBpAHQAbABhAGIALgBjAG8A"
+				"bQAvAGsAaQBjAGEAZAAvAGwAaQBiAHIAYQByAGkAZQBzAC8AawBpAGMAYQBkAC0AZgBvAG8AdABw"
+				"AHIAaQBuAHQALQBnAGUAbgBlAHIAYQB0AG8AcgAvAC0ALwB0AHIAZQBlAC8AbQBhAHMAdABlAHIA"
+				"LwBzAGMAcgBpAHAAdABzAC8AVABlAHIAbQBpAG4AYQBsAEIAbABvAGMAawBfAFcAQQBHAE8AAAAA"
+				"AAAAAAAAAAAAtxR1lgAmAIB0AGUAcgBtAGkAbgBhAGwAIABiAGwAbwBjAGsAIABSAE4ARAAgADIA"
+				"MAA1AC0AMAAwADAANgA1ACwAIAA0ADUARABlAGcAcgBlAGUAIAAoAGMAYQBiAGwAZQAgAHUAbgBk"
+				"AGUAcgAgADQANQBkAGUAZwByAGUAZQApACwAIAAxADEAIABwAGkAbgBzACwAIABwAGkAdABjAGgA"
+				"IAA1AG0AbQAsACAAcwBpAHoAZQAgADUANQB4ADEAMgAuADYAbQBtACwAIABkAHIAaQBsAGwAIABk"
+				"AGkAYQBtAGUAdABlAHIAIAAxAC4AMwBtAG0ALAAgAHAAYQBkACAAZABpAGEAbQBlAHQAZQByACAA"
+				"MgAuADUAbQBtACwAIABoAHQAdABwADoALwAvAGMAZABuAC0AcgBlAGkAYwBoAGUAbAB0AC4AZABl"
+				"AC8AZABvAGMAdQBtAGUAbgB0AHMALwBkAGEAdABlAG4AYgBsAGEAdAB0AC8AQwAxADUAMQAvAFIA"
+				"TgBEAF8AMgAwADUALQAwADAAMAA1ADYAXwBEAEIAXwBFAE4ALgBwAGQAZgAsACAAcwBjAHIAaQBw"
+				"AHQALQBnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAGgAdAB0AHAAcwA6AC8ALwBnAGkA"
+				"dABsAGEAYgAuAGMAbwBtAC8AawBpAGMAYQBkAC8AbABpAGIAcgBhAHIAaQBlAHMALwBrAGkAYwBh"
 				"AA=="
 			)
 			(uuid "46e29b09-63e9-4dc5-8030-05d57d6a505a")
@@ -24877,7 +24895,6 @@
 		)
 	)
 	(footprint "weather_station_lib:ESP32-WROOM-32 or ESP32S_no_paste"
-		(locked yes)
 		(layer "F.Cu")
 		(uuid "f6a442f1-7adf-48bc-b038-e8a5bf2060ca")
 		(at 136.6275 114.655 -90)
@@ -24943,7 +24960,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "1013ce52-bb6c-4b2b-aad9-176fa633a2e2")
+			(uuid "0ad856b0-4bd3-498b-b538-aea526a7d1c6")
 		)
 		(fp_line
 			(start 9.12 9.88)
@@ -24953,7 +24970,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "be24a8c4-0218-4823-bba6-1788d4522a65")
+			(uuid "bc23e368-8568-475f-8ee4-d399126fe19c")
 		)
 		(fp_line
 			(start -9.12 9.1)
@@ -24963,7 +24980,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "9a8e7bec-20ef-4fbd-916c-1533c2883fe8")
+			(uuid "627a68fd-7772-4c08-932f-f8368a0817de")
 		)
 		(fp_line
 			(start 9.12 9.1)
@@ -24973,7 +24990,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "05ac4249-e3f4-4c82-8a6b-dd9e330effe5")
+			(uuid "fe612bb7-b501-4159-8a22-05f98b7158c0")
 		)
 		(fp_poly
 			(pts
@@ -24985,7 +25002,7 @@
 			)
 			(fill yes)
 			(layer "F.SilkS")
-			(uuid "bfa24492-439f-49c0-9aca-88649316f73b")
+			(uuid "7e8b845e-7196-4189-9262-a45cbda441c3")
 		)
 		(fp_line
 			(start -9.75 10.51)
@@ -24995,7 +25012,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "2dd9ef77-0587-4916-93c7-7d15b0f414df")
+			(uuid "6cd86344-b17f-4983-aaa0-994ebfe1c5e5")
 		)
 		(fp_line
 			(start -9.75 10.51)
@@ -25005,7 +25022,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "3248bd49-8250-46a6-a281-703a5ca29150")
+			(uuid "e84d11be-67e2-421a-b2cb-0b3586148446")
 		)
 		(fp_line
 			(start -24 -9.8)
@@ -25015,7 +25032,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "9c61dafc-e35a-48d0-97dd-7fb12edbc285")
+			(uuid "afd3c70e-dd65-4873-a111-9d892e864985")
 		)
 		(fp_line
 			(start 9.75 -9.8)
@@ -25025,7 +25042,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "c583470e-48be-4228-b2a7-222de4df189b")
+			(uuid "f770aad1-3bd7-48e2-b502-75702a5c0fe4")
 		)
 		(fp_line
 			(start 9.75 -9.8)
@@ -25035,7 +25052,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "b9740668-759c-4d6c-837c-4f9ea0681a2a")
+			(uuid "74cf081f-a966-478c-b475-bff932f945e4")
 		)
 		(fp_line
 			(start 24 -9.8)
@@ -25045,7 +25062,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "f776d746-8d8a-43d5-86b0-dd4aa8aa9272")
+			(uuid "5ed48063-20ae-41b5-a983-136f1766de97")
 		)
 		(fp_line
 			(start -24 -30.74)
@@ -25055,7 +25072,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "7e6ac7a2-397b-46d0-9a6b-eee4d8240da0")
+			(uuid "12dda744-d824-4542-a77f-2db956c0b185")
 		)
 		(fp_line
 			(start 24 -30.74)
@@ -25065,7 +25082,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "ad22a4aa-1890-4ad5-b414-01da90e0ab0b")
+			(uuid "73b0501f-922c-4c86-b4c9-15ebb2f70fec")
 		)
 		(fp_line
 			(start -9 9.76)
@@ -25075,7 +25092,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "40b878b4-6231-4081-ae37-af0a223c999c")
+			(uuid "acaf0f8a-a063-475b-91e3-4461ea50a562")
 		)
 		(fp_line
 			(start 9 9.76)
@@ -25085,7 +25102,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "7e1dc69d-ada2-424e-bec3-1addc59cc0e1")
+			(uuid "9d874cc9-f03f-4646-885e-2308d60e98de")
 		)
 		(fp_line
 			(start -9 -9.02)
@@ -25095,7 +25112,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "75f7c3cb-20f8-44eb-b02c-7e8b2a7dd75a")
+			(uuid "8ea6123a-351f-409d-bdc8-dbeb17b8d045")
 		)
 		(fp_line
 			(start -9 -9.02)
@@ -25105,7 +25122,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "87054db7-8407-4b0a-9522-76a3b6900699")
+			(uuid "c4ba4542-56cc-4cd8-b979-efaaccc16c4f")
 		)
 		(fp_line
 			(start -8.5 -9.52)
@@ -25115,7 +25132,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "92559a6d-ce29-456e-a477-72a5d1dd6647")
+			(uuid "8b4da76f-262a-4b20-b101-48ded0f3de01")
 		)
 		(fp_line
 			(start -9 -15.74)
@@ -25125,7 +25142,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "82ef3f93-587b-4ad0-9059-a4c6ba4334bb")
+			(uuid "301a50cf-43f2-48b9-b023-20733801d2e7")
 		)
 		(fp_line
 			(start -9 -15.74)
@@ -25135,7 +25152,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "d9195425-0cc0-48e3-a1af-b28ef8ad81b3")
+			(uuid "6fc3dc3e-e699-42f1-b3bc-2939fac03880")
 		)
 		(fp_text user "Antenna"
 			(at 0 -13 90)
@@ -25764,7 +25781,7 @@
 			(net 0)
 			(net_name "")
 			(layers "F.Cu" "B.Cu")
-			(uuid "2f325778-9fd2-498c-928b-b45e8ecf8d33")
+			(uuid "2ec0d632-61d1-4017-837c-b8bbe6b3ae0c")
 			(hatch full 0.508)
 			(connect_pads
 				(clearance 0)
