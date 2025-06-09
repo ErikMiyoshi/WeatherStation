@@ -3,6 +3,8 @@
 #include "esp_log.h"
 
 #include "wifi_st.h"
+#include "i2c_cfg.h"
+#include "aht20_bmp280.h"
 
 
 void app_main(void)
@@ -16,4 +18,12 @@ void app_main(void)
     ESP_ERROR_CHECK(ret);
 
     wifi_init_sta();
+    i2c_init();
+    aht20_init();
+
+    int i = 0;
+    while(1) {
+        i++;
+        vTaskDelay(1000/portTICK_PERIOD_MS);
+    }
 }

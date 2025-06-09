@@ -1,0 +1,1 @@
+void aht20_init(void);
