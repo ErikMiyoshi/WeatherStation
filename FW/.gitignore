@@ -137,4 +137,4 @@ sdkconfig.old
 # Ignore dependency files
 *.d
 
-
+sdkconfig
