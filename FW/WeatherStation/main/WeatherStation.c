@@ -6,7 +6,6 @@
 #include "i2c_cfg.h"
 #include "aht20_bmp280.h"
 
-
 void app_main(void)
 {
     //Initialize NVS
@@ -20,6 +19,7 @@ void app_main(void)
     wifi_init_sta();
     i2c_init();
     aht20_init();
+    bmp280_init();
 
     int i = 0;
     while(1) {
