@@ -12,36 +12,40 @@ static const char *TAG = "aht20_bmp280";
 static const char *TAG20 = "aht20";
 static const char *TAG280 = "bmp280";
 
-#define AHT20_INTERVAL 5000 //ms
-#define BMP280_INTERVAL 5000 //ms
+#define AHT20_INTERVAL 1000 //ms
+#define BMP280_INTERVAL 1000 //ms
 
 static aht20_dev_handle_t aht20_handle = NULL;
 static bmx280_t* bmx280 = NULL;
 
-int16_t aht20_temperature_i16;
-int16_t aht20_humidity_i16;
-float aht20_temperature;
-float aht20_humidity;
+aht20_measure aht20;
+bmp280_measure bmp280;
 
-float bmp280_temperature = 0;
-float bmp280_pressure = 0;
-float bmp280_humidity = 0;
+QueueHandle_t queue_aht;
 
 static void aht20_task(void *args) {
     while(1) {
-        ESP_ERROR_CHECK(aht20_read_float(aht20_handle, &aht20_temperature, &aht20_humidity));
-        ESP_LOGI(TAG20, "%-20s: %2.2fdegC", "temperature is", aht20_temperature);
-        ESP_LOGI(TAG20, "%-20s: %2.2f%%", "humidity is", aht20_humidity);
+        ESP_ERROR_CHECK(aht20_read_float(aht20_handle, &aht20.aht20_temperature, &aht20.aht20_humidity));
+        ESP_LOGI(TAG20, "%-20s: %2.2fdegC", "temperature is", aht20.aht20_temperature);
+        ESP_LOGI(TAG20, "%-20s: %2.2f%%", "humidity is", aht20.aht20_humidity);
 
-        ESP_ERROR_CHECK(aht20_read_i16(aht20_handle, &aht20_temperature_i16, &aht20_humidity_i16));
-        ESP_LOGI(TAG20, "%-20s: %d", "temperature is", aht20_temperature_i16);
-        ESP_LOGI(TAG20, "%-20s: %d", "humidity is", aht20_humidity_i16);
+        ESP_ERROR_CHECK(aht20_read_i16(aht20_handle, &aht20.aht20_temperature_i16, &aht20.aht20_humidity_i16));
+        ESP_LOGI(TAG20, "%-20s: %d", "temperature is", aht20.aht20_temperature_i16);
+        ESP_LOGI(TAG20, "%-20s: %d", "humidity is", aht20.aht20_humidity_i16);
+
+        if( pdPASS == xQueueSend(queue_aht, &aht20,portMAX_DELAY)) {
+            ESP_LOGI(TAG,"Send data to queue AHT20");
+        } else {
+            ESP_LOGI(TAG,"Send data to queue AHT20 failed");
+        }
 
         vTaskDelay(AHT20_INTERVAL / portTICK_PERIOD_MS);
     }
 }
 
-void aht20_init(void) {
+void aht20_init(QueueHandle_t queue_aht20) {
+    queue_aht = queue_aht20;
+
     i2c_master_bus_handle_t i2c_master_handle;
     ESP_ERROR_CHECK(i2c_master_get_bus_handle(I2C_MASTER_NUM, &i2c_master_handle));
 
@@ -52,7 +56,7 @@ void aht20_init(void) {
     };
     aht20_new_sensor(i2c_master_handle, &aht20_i2c_config, &aht20_handle);
 
-    xTaskCreate(aht20_task, "aht20_task", 2048, NULL, 10, NULL);
+    xTaskCreate(aht20_task, "aht20_task", 2048, queue_aht20, 10, NULL);
 }
 
 static void bmp280_task(void *args) {
@@ -64,14 +68,14 @@ static void bmp280_task(void *args) {
             vTaskDelay(pdMS_TO_TICKS(1));
         } while(bmx280_isSampling(bmx280));
 
-        ESP_ERROR_CHECK(bmx280_readoutFloat(bmx280, &bmp280_temperature, &bmp280_pressure, &bmp280_humidity));
-        ESP_LOGI(TAG280, "Read Values: temp = %f, pres = %f, hum = %f", bmp280_temperature, bmp280_pressure, bmp280_humidity);
+        ESP_ERROR_CHECK(bmx280_readoutFloat(bmx280, &bmp280.bmp280_temperature, &bmp280.bmp280_pressure, &bmp280.bmp280_humidity));
+        ESP_LOGI(TAG280, "Read Values: temp = %f, pres = %f, hum = %f", bmp280.bmp280_temperature, bmp280.bmp280_pressure, bmp280.bmp280_humidity);
         vTaskDelay(BMP280_INTERVAL / portTICK_PERIOD_MS);
         }
     }
 }
 
-void bmp280_init(void) {
+void bmp280_init(QueueHandle_t queue_bmp280) {
     i2c_master_bus_handle_t i2c_master_handle;
     ESP_ERROR_CHECK(i2c_master_get_bus_handle(I2C_MASTER_NUM, &i2c_master_handle));
 

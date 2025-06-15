@@ -6,6 +6,7 @@
 #include "i2c_cfg.h"
 #include "aht20_bmp280.h"
 #include "oled.h"
+#include "monitor.h"
 
 void app_main(void)
 {
@@ -17,11 +18,15 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
+    QueueHandle_t queue_aht20 = xQueueCreate(10,sizeof(aht20_measure));
+    QueueHandle_t queue_bmp280 = xQueueCreate(10,sizeof(bmp280_measure));
+
     wifi_init_sta();
     i2c_init();
-    aht20_init();
-    bmp280_init();
+    aht20_init(queue_aht20);
+    bmp280_init(queue_bmp280);
     display_init();
+    monitor_init(queue_aht20,queue_bmp280);
 
     int i = 0;
     while(1) {
