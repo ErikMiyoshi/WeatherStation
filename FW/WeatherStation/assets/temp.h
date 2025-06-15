@@ -1,0 +1,1 @@
+LV_IMG_DECLARE(temp);

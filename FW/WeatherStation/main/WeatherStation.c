@@ -5,6 +5,7 @@
 #include "wifi_st.h"
 #include "i2c_cfg.h"
 #include "aht20_bmp280.h"
+#include "oled.h"
 
 void app_main(void)
 {
@@ -20,6 +21,7 @@ void app_main(void)
     i2c_init();
     aht20_init();
     bmp280_init();
+    display_init();
 
     int i = 0;
     while(1) {

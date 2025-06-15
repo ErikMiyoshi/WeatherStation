@@ -17,3 +17,4 @@ dependencies:
   jack-ingithub/aht20: '*'
   esp-idf-bmx280:
     git: https://github.com/utkumaden/esp-idf-bmx280.git
+  espressif/esp_lvgl_port: ^2.6.0
