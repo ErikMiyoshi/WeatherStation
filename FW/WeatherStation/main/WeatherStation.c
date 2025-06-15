@@ -22,6 +22,7 @@ void app_main(void)
     QueueHandle_t queue_bmp280 = xQueueCreate(10,sizeof(bmp280_measure));
 
     wifi_init_sta();
+    app_sntp_init();
     i2c_init();
     aht20_init(queue_aht20);
     bmp280_init(queue_bmp280);

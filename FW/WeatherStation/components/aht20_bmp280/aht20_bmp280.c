@@ -12,8 +12,8 @@ static const char *TAG = "aht20_bmp280";
 static const char *TAG20 = "aht20";
 static const char *TAG280 = "bmp280";
 
-#define AHT20_INTERVAL 1000 //ms
-#define BMP280_INTERVAL 1000 //ms
+#define AHT20_INTERVAL 10000 //ms
+#define BMP280_INTERVAL 10000 //ms
 
 static aht20_dev_handle_t aht20_handle = NULL;
 static bmx280_t* bmx280 = NULL;
