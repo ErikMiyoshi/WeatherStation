@@ -10,7 +10,6 @@
 #include "esp_lcd_panel_ssd1306.h"
 #include "esp_lvgl_port.h"
 #include "lvgl.h"
-#include "oled_ui.h"
 
 static const char *TAG = "display";
 
@@ -25,64 +24,8 @@ static const char *TAG = "display";
 #define EXAMPLE_LCD_V_RES              64
 
 lv_disp_t *disp;
-lv_obj_t *my_label;
-
-static lv_obj_t * label;
-lv_obj_t * slider;
-
-// void lv_example_get_started_4(void)
-// {
-//     /*Create a slider in the center of the display*/
-//     slider = lv_slider_create(lv_screen_active());
-//     lv_obj_set_width(slider, 50);                          /*Set the width*/
-//     lv_obj_center(slider);                                  /*Align to the center of the parent (screen)*/
-
-//     /*Create a label above the slider*/
-//     label = lv_label_create(lv_screen_active());
-//     lv_label_set_text(label, "0");
-//     lv_obj_align_to(label, slider, LV_ALIGN_OUT_TOP_MID, 0, -15);    /*Align top of the slider*/
-// }
-
-
-// void update_display_task(void *arg) {
-//     lv_obj_t *scr = lv_disp_get_scr_act(disp);
-//     //lv_obj_t *label = lv_label_create(scr);
-
-//     lv_label_set_text(label, "Counting...");
-//     lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-//     vTaskDelay(5000 / portTICK_PERIOD_MS);
-    
-//     int counter = 0;
-//     char buf[32];
-
-//     if (lvgl_port_lock(0)) {
-//         lv_example_get_started_4();
-//         lvgl_port_unlock();
-//     }
-
-//     while (1) {
-//         ESP_LOGI(TAG,"Running display task...%d", counter);
-
-
-//         if (lvgl_port_lock(0)) {
-//             // snprintf(buf, sizeof(buf), "counter: %d", counter);
-//             // lv_label_set_text(label, buf);
-//             lv_label_set_text_fmt(label, "%" LV_PRId32, lv_slider_get_value(slider));
-//             lvgl_port_unlock();
-//         }
-//         counter++;
-//         vTaskDelay(pdMS_TO_TICKS(100));
-
-//         if(counter > 10000) {
-//             counter=0;
-//         }
-//     }
-// }
-
 
 void display_init(void) {
-    //i2c_master_bus_handle_t i2c_bus = NULL;
-    //i2c_bus = init_i2c();
     i2c_master_bus_handle_t i2c_master_handle;
     ESP_ERROR_CHECK(i2c_master_get_bus_handle(I2C_MASTER_NUM, &i2c_master_handle));
 
@@ -167,9 +110,7 @@ void display_init(void) {
     if (lvgl_port_lock(0)) {
         /* Rotation of the screen */
         lv_disp_set_rotation(disp, LV_DISPLAY_ROTATION_180);
-
         // Release the mutex
         lvgl_port_unlock();
     }
-    oled_ui_start(disp);
 }

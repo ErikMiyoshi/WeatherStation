@@ -7,6 +7,8 @@
 #include "aht20_bmp280.h"
 #include "oled.h"
 #include "monitor.h"
+#include "menu.h"
+#include "app_button.h"
 
 void app_main(void)
 {
@@ -26,12 +28,19 @@ void app_main(void)
     i2c_init();
     aht20_init(queue_aht20);
     bmp280_init(queue_bmp280);
+    app_button_init();
     display_init();
     monitor_init(queue_aht20,queue_bmp280);
+    menu_init();
 
     int i = 0;
     while(1) {
-        i++;
-        vTaskDelay(1000/portTICK_PERIOD_MS);
+        //menu_handle_input(0, 1, 0);
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+        //menu_handle_input(0, 0, 1);
+        while(1){
+            i++;
+            vTaskDelay(500 / portTICK_PERIOD_MS);
+        }
     }
 }
