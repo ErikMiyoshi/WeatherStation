@@ -14,17 +14,18 @@ lv_obj_t * img;
 
 float temperature;
 float humidity;
+int voltageBattery;
 
 void menu_view_draw_main(int selected) {
     if (lvgl_port_lock(0)) {
         lv_obj_clean(lv_scr_act());
 
-        const char *items[] = { "Sensors", "Time" };
+        const char *items[] = { "Sensors", "Time", "Battery"};
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             lv_obj_t *label = lv_label_create(lv_scr_act());
-            lv_label_set_text_fmt(label, "%s %s", (i == selected ? "-" : " "), items[i]);
-            lv_obj_align(label, LV_ALIGN_TOP_LEFT, 10, 30 * i);
+            lv_label_set_text_fmt(label, "%s %s", (i == selected ? "->" : " "), items[i]);
+            lv_obj_align(label, LV_ALIGN_TOP_LEFT, 13, 25 * i);
         }
         lvgl_port_unlock();
     }
@@ -40,6 +41,25 @@ void lv_set_sensors_value(float temp, float hum) {
     temperature = temp;
     humidity = hum;
 }
+
+void lv_set_battery_value(int voltage) {
+    voltageBattery = voltage;
+}
+
+void disp_show_battery(void) {
+    if (lvgl_port_lock(0)) {
+        lv_obj_clean(lv_scr_act());
+        label = lv_label_create(lv_scr_act());
+
+        char buf[30];
+        snprintf(buf, sizeof(buf), "%.2fV", (float)voltageBattery*2/1000);
+        lv_label_set_text(label, buf);
+        lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+
+        lvgl_port_unlock();
+    }
+}
+
 
 void disp_show_time(void) {
     struct tm my_time;

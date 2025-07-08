@@ -28,19 +28,26 @@ void monitor_task(void *arg) {
 
             lv_set_sensors_value(sensors_data.aht20_data.aht20_temperature,sensors_data.aht20_data.aht20_humidity);
         }
-        if(is_button_pressed()) {
-            ESP_LOGI(TAG,"Button pressed");
+        if(xQueueReceive(queues.queue_bmp280, &sensors_data.bmp280_data, 0)) {
+            ESP_LOGI(TAG,"Received data from queue BMP20");
+
+            lv_set_sensors_value(sensors_data.aht20_data.aht20_temperature,sensors_data.aht20_data.aht20_humidity);
+        }
+        lv_set_battery_value(battery_get_voltage());
+        if(is_button_center_pressed()) {
+            ESP_LOGI(TAG,"Button center pressed");
             menu_handle_input(0,0,1);
         }
-        if(is_joystick_pressed_left()) {
-            ESP_LOGI(TAG,"Joystick left");
+        if(is_button_left_pressed()) {
+            ESP_LOGI(TAG,"Button left pressed");
             menu_handle_input(1,0,0);
         }
-        if(is_joystick_pressed_right()) {
-            ESP_LOGI(TAG,"Joystick right");
+        if(is_button_right_pressed()) {
+            ESP_LOGI(TAG,"Button right pressed");
             menu_handle_input(0,1,0);
         }
         vTaskDelay(100 / portTICK_PERIOD_MS);
+        menu_handle_input(0,0,0);
     }
 }
 
