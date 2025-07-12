@@ -4,6 +4,7 @@
 #include "oled_ui.h"
 #include "app_button.h"
 #include "menu.h"
+#include "esp_timer.h"
 
 static const char *TAG = "monitor";
 
@@ -21,33 +22,43 @@ struct sensors_queue queues;
 sensors_data_t sensors_data;
 
 void monitor_task(void *arg) {
+    uint64_t time;
+    time = esp_timer_get_time();
     while(1) {
         //ESP_LOGI(TAG,"Monitor Task");
+        if(esp_timer_get_time() - time > 10000000) {
+            time = esp_timer_get_time();
+            ESP_LOGI(TAG,"Turn display off");
+            lv_turn_off();
+        }
+
         if(xQueueReceive(queues.queue_aht20, &sensors_data.aht20_data, 0)) {
             ESP_LOGI(TAG,"Received data from queue AHT20");
 
             lv_set_sensors_value(sensors_data.aht20_data.aht20_temperature,sensors_data.aht20_data.aht20_humidity);
         }
         if(xQueueReceive(queues.queue_bmp280, &sensors_data.bmp280_data, 0)) {
-            ESP_LOGI(TAG,"Received data from queue BMP20");
+            ESP_LOGI(TAG,"Received data from queue BMP280");
 
-            lv_set_sensors_value(sensors_data.aht20_data.aht20_temperature,sensors_data.aht20_data.aht20_humidity);
         }
         lv_set_battery_value(battery_get_voltage());
         if(is_button_center_pressed()) {
             ESP_LOGI(TAG,"Button center pressed");
             menu_handle_input(0,0,1);
+            time = esp_timer_get_time();
         }
         if(is_button_left_pressed()) {
             ESP_LOGI(TAG,"Button left pressed");
             menu_handle_input(1,0,0);
+            time = esp_timer_get_time();
         }
         if(is_button_right_pressed()) {
             ESP_LOGI(TAG,"Button right pressed");
             menu_handle_input(0,1,0);
+            time = esp_timer_get_time();
         }
         vTaskDelay(100 / portTICK_PERIOD_MS);
-        menu_handle_input(0,0,0);
+        //menu_handle_input(0,0,0);
     }
 }
 

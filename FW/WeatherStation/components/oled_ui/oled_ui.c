@@ -7,6 +7,8 @@
 
 static const char *TAG = "display_ui";
 
+lv_disp_t *display;
+
 lv_obj_t * label;
 lv_obj_t * label2;
 lv_obj_t * bar1;
@@ -35,6 +37,14 @@ void get_current_time(struct tm *out_timeinfo) {
     time_t now;
     time(&now);
     localtime_r(&now, out_timeinfo);
+}
+
+void lv_turn_off(void) {
+    lv_obj_clean(lv_scr_act());
+    // lv_obj_t * black_screen;
+    // black_screen = lv_obj_create(NULL);
+    // lv_obj_set_size(black_screen, LV_HOR_RES, LV_VER_RES);
+    // lv_obj_set_style_bg_color(black_screen, lv_color_black(), 0);
 }
 
 void lv_set_sensors_value(float temp, float hum) {
@@ -137,6 +147,7 @@ void update_display_task(void *arg) {
 
 
 void oled_ui_start(lv_disp_t *disp) {
+    display = disp;
     lv_obj_t *scr = lv_disp_get_scr_act(disp);
     //xTaskCreate(update_display_task, "ui_update", 4096, disp, 1, NULL);
 }

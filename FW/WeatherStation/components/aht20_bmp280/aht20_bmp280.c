@@ -12,8 +12,8 @@ static const char *TAG = "aht20_bmp280";
 static const char *TAG20 = "aht20";
 static const char *TAG280 = "bmp280";
 
-#define AHT20_INTERVAL 10000 //ms
-#define BMP280_INTERVAL 10000 //ms
+#define AHT20_INTERVAL 600000 //ms
+#define BMP280_INTERVAL 600000 //ms
 
 static aht20_dev_handle_t aht20_handle = NULL;
 static bmx280_t* bmx280 = NULL;
@@ -22,6 +22,8 @@ aht20_measure aht20;
 bmp280_measure bmp280;
 
 QueueHandle_t queue_aht;
+QueueHandle_t queue_bmp;
+
 
 static void aht20_task(void *args) {
     while(1) {
@@ -64,18 +66,27 @@ static void bmp280_task(void *args) {
 
     while(1) {
         for(int i = 0; i < 3; i++) {
-        do {
-            vTaskDelay(pdMS_TO_TICKS(1));
-        } while(bmx280_isSampling(bmx280));
+            do {
+                vTaskDelay(pdMS_TO_TICKS(1));
+            } while(bmx280_isSampling(bmx280));
 
-        ESP_ERROR_CHECK(bmx280_readoutFloat(bmx280, &bmp280.bmp280_temperature, &bmp280.bmp280_pressure, &bmp280.bmp280_humidity));
-        ESP_LOGI(TAG280, "Read Values: temp = %f, pres = %f, hum = %f", bmp280.bmp280_temperature, bmp280.bmp280_pressure, bmp280.bmp280_humidity);
-        vTaskDelay(BMP280_INTERVAL / portTICK_PERIOD_MS);
+            ESP_ERROR_CHECK(bmx280_readoutFloat(bmx280, &bmp280.bmp280_temperature, &bmp280.bmp280_pressure, &bmp280.bmp280_humidity));
+            ESP_LOGI(TAG280, "Read Values: temp = %f, pres = %f, hum = %f", bmp280.bmp280_temperature, bmp280.bmp280_pressure, bmp280.bmp280_humidity);
+        
+            if( pdPASS == xQueueSend(queue_bmp, &bmp280,portMAX_DELAY)) {
+                ESP_LOGI(TAG,"Send data to queue BMP280");
+            } else {
+                ESP_LOGI(TAG,"Send data to queue BMP280 failed");
+            }
+            
+            vTaskDelay(BMP280_INTERVAL / portTICK_PERIOD_MS);
         }
     }
 }
 
 void bmp280_init(QueueHandle_t queue_bmp280) {
+    queue_bmp = queue_bmp280;
+
     i2c_master_bus_handle_t i2c_master_handle;
     ESP_ERROR_CHECK(i2c_master_get_bus_handle(I2C_MASTER_NUM, &i2c_master_handle));
 

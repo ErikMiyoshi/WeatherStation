@@ -102,7 +102,6 @@ static void adc_task(void *args) {
     while(1) {
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         ret = adc_continuous_read(adc_handle, result, EXAMPLE_READ_LEN, &ret_num, 0);
-
         if (ret == ESP_OK) {
             for (int i = 0; i < 5/*ret_num*/; i += SOC_ADC_DIGI_RESULT_BYTES) {
                 adc_digi_output_data_t *p = (adc_digi_output_data_t*)&result[i];
