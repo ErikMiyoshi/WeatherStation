@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <h1>Weather Station Sensors</h1>
+
+    <select id="interval">
+        <option value="1h">Last hour</option>
+        <option value="6h">Last 6 hours</option>
+        <option value="1d">Last day</option>
+        <option value="7d">Last 3 days</option>
+    </select>
+
+    <h2>Device 1</h2>
+    <div style="width: 800px; height: 500px;">
+        <canvas id="tempChartDevice1"></canvas>
+    </div>
+
+    <h2>Device 2</h2>
+    <div style="width: 800px; height: 500px;">
+        <canvas id="tempChartDevice2"></canvas>
+    </div>    
+
+    <script>
+        async function fetchData(str) { 
+            const response = await fetch(str);
+            const data = await response.json();
+            return data;
+        }
+
+        function filterData(interval, data) {
+            const now = new Date();
+            let start;
+
+            switch (interval) {
+            case '1h':
+                start = new Date(now.getTime() - 1 * 60 * 60 * 1000);
+                break;
+            case '6h':
+                start = new Date(now.getTime() - 6 * 60 * 60 * 1000);
+                break;
+            case '1d':
+                start = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                break;
+            case '3d':
+                start = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000);
+                break;
+            default:
+                start = new Date(0); // sem filtro
+            }
+
+            return data.filter(p => p.x >= start);
+        }
+
+        function parseData(data) {
+            data = data.reverse()
+            const labels = data.map(item => new Date(item.timestamp));
+            const temperature = data.map(item => item.sensortemperature);
+
+            const humidity = data.map(item => item.sensorhumidity);
+            const pressure = data.map(item => item.sensorpressure);
+            return { labels, temperature, humidity, pressure};
+        }
+
+        const charts = {}
+
+        async function createChart(chartId, deviceNum, interval) {
+            const dataaht20 = await fetchData(`http://192.168.15.71:5000/device/${deviceNum}/aht20`);
+            const databmp280 = await fetchData(`http://192.168.15.71:5000/device/${deviceNum}/bmp280`);
+            const { labels: labels_aht20, temperature: sensorTemperature_aht20, humidity: sensorHumidity_aht20, pressure: sensorPressure_aht20 } = parseData(dataaht20);
+            const { labels: labels_bmp280, temperature: sensorTemperature_bmp280, humidity: sensorHumidity_bmp280, pressure: sensorPressure_bmp280 } = parseData(databmp280);
+
+            const ctx = document.getElementById(chartId).getContext('2d');
+
+            dataAht20 = labels_aht20.map((ts, i) => ({ x: ts, y: sensorTemperature_aht20[i] }));
+            dataBmp280 = labels_bmp280.map((ts, i) => ({ x: ts, y: sensorTemperature_bmp280[i] }));
+
+            if (charts[chartId]) {
+                charts[chartId].destroy();
+            }
+
+
+            charts[chartId] = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'Temperature AHT20',
+                    data: filterData(interval, dataAht20),
+                    borderColor: 'blue',
+                    backgroundColor: 'blue',
+                    fill: false,
+                    tension: 0.1
+                    },{
+                    label: 'Temperature BMP280',
+                    data: filterData(interval, dataBmp280),
+                    borderColor: 'red',
+                    backgroundColor: 'red',
+                    fill: false,
+                    tension: 0.1
+                    },
+                    ]
+                },
+                options: {
+                    parsing: true, // usa dados {x,y} direto
+                    scales: {
+                    x: {
+                        type: 'time',     // eixo tempo
+                        time: {
+                        unit: 'minute'  // unidade no eixo X
+                        },
+                        title: {
+                        display: true,
+                        text: 'Hora'
+                        },
+                    },
+                    y: {
+                        title: {
+                        display: true,
+                        text: '°C'
+                        },
+                    }
+                    }
+                }
+                });
+        }
+
+        createChart('tempChartDevice1', 1, '1h');
+        createChart('tempChartDevice2', 2, '1h');
+
+        document.getElementById('interval').addEventListener('change', function () {
+            createChart('tempChartDevice1', 1, this.value);
+            createChart('tempChartDevice2', 2, this.value);
+        });
+
+    </script>
+</body>
+</html>
