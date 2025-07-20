@@ -5,6 +5,9 @@
 #include "app_button.h"
 #include "menu.h"
 #include "esp_timer.h"
+#include "mqtt_app.h"
+
+#define DEVICE_NUM 1
 
 static const char *TAG = "monitor";
 
@@ -24,6 +27,7 @@ sensors_data_t sensors_data;
 void monitor_task(void *arg) {
     uint64_t time;
     time = esp_timer_get_time();
+    int deviceNum = DEVICE_NUM;
     while(1) {
         //ESP_LOGI(TAG,"Monitor Task");
         if(esp_timer_get_time() - time > 10000000) {
@@ -31,15 +35,20 @@ void monitor_task(void *arg) {
             ESP_LOGI(TAG,"Turn display off");
             lv_turn_off();
         }
-
         if(xQueueReceive(queues.queue_aht20, &sensors_data.aht20_data, 0)) {
             ESP_LOGI(TAG,"Received data from queue AHT20");
+            
+            char payload[100];
+            snprintf(payload, sizeof(payload), "{\"device\":%d, \"sensor\": \"aht20\", \"t\":%.2f, \"h\":%.2f}", deviceNum, sensors_data.aht20_data.aht20_temperature, sensors_data.aht20_data.aht20_humidity);
+            mqtt_send_message("measure/", payload);
 
             lv_set_sensors_value(sensors_data.aht20_data.aht20_temperature,sensors_data.aht20_data.aht20_humidity);
         }
         if(xQueueReceive(queues.queue_bmp280, &sensors_data.bmp280_data, 0)) {
             ESP_LOGI(TAG,"Received data from queue BMP280");
-
+            char payload[100];
+            snprintf(payload, sizeof(payload), "{\"device\":%d, \"sensor\": \"bmp280\", \"t\":%.2f, \"p\":%.2f}", deviceNum, sensors_data.bmp280_data.bmp280_temperature, sensors_data.bmp280_data.bmp280_pressure);
+            mqtt_send_message("measure/", payload);
         }
         lv_set_battery_value(battery_get_voltage());
         if(is_button_center_pressed()) {

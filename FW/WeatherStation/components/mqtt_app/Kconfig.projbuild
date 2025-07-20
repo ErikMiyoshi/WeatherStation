@@ -1,0 +1,25 @@
+menu "Mqtt Configuration"
+
+    config BROKER_URL
+        string "Broker URL"
+        default "mqtt://mqtt.eclipseprojects.io"
+        help
+            URL of the broker to connect to
+            example "mqtt://mqtt.eclipseprojects.io". The port now are fixed to 8883 and can be changed on main app
+
+    config BROKER_URL_FROM_STDIN
+        bool
+        default y if BROKER_URL = "FROM_STDIN"
+
+    config BROKER_USERNAME
+        string "Broker username"
+        default "username"
+        help
+            Username for broker
+    config BROKER_PASSWORD
+        string "Broker password"
+        default "password"
+        help
+            Password for broker username
+
+endmenu
