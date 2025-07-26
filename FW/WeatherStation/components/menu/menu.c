@@ -63,7 +63,7 @@ void menu_handle_input(bool up, bool down, bool ok) {
 
 void menu_task(void *args) {
     while(1) {
-        menu_handle_input(0,0,0);
+        //menu_handle_input(0,0,0);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
@@ -72,6 +72,6 @@ void menu_task(void *args) {
 void menu_init(void) {
     current_state = MENU_STATE_MAIN;
     selected_index = 0;
-    menu_view_draw_main(selected_index);
+    //menu_view_draw_main(selected_index);
     //xTaskCreate(menu_task, "menu_task", 4096, NULL, 1, NULL);
 }

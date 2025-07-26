@@ -1,5 +1,6 @@
 void app_button_init(void);
 
+int adc_get_single(void);
 int battery_get_voltage(void);
 bool is_button_left_pressed(void);
 bool is_button_center_pressed(void);

@@ -74,19 +74,21 @@ void app_main(void)
     // Example of nvs_get_stats() to get overview of actual statistics of data entries :
     nvs_stats_t nvs_stats;
     nvs_get_stats(NULL, &nvs_stats);
+    printf("Count: UsedEntries = (%d), FreeEntries = (%d), AvailableEntries = (%d), AllEntries = (%d)\n",
+       nvs_stats.used_entries, nvs_stats.free_entries, nvs_stats.available_entries, nvs_stats.total_entries);
 
     QueueHandle_t queue_aht20 = xQueueCreate(10,sizeof(aht20_measure));
     QueueHandle_t queue_bmp280 = xQueueCreate(10,sizeof(bmp280_measure));
 
     wifi_init_sta();
+    mqtt_init();
     app_sntp_init();
     i2c_init();
     aht20_init(queue_aht20);
     bmp280_init(queue_bmp280);
     app_button_init();
     display_init();
-    mqtt_init();
-    monitor_init(queue_aht20,queue_bmp280);
+    monitor_init(queue_aht20,queue_bmp280, batOp);
     menu_init();
 
     int i = 0;

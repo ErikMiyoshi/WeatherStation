@@ -3,6 +3,7 @@
 #include <esp_log.h>
 #include "freertos/FreeRTOS.h"
 
+#include "esp_adc/adc_oneshot.h"
 #include "esp_adc/adc_continuous.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
@@ -21,6 +22,7 @@ static TaskHandle_t s_task_handle;
 #define ADC_BITWIDTH    ADC_BITWIDTH_12
 #define ADC_ATTEN_DB    ADC_ATTEN_DB_12
 
+adc_oneshot_unit_handle_t adc1_handle = NULL;
 adc_continuous_handle_t adc_handle = NULL;
 adc_cali_handle_t adc_cali_handle = NULL;
 
@@ -29,6 +31,9 @@ int vbattery;
 int buttonLeft = 1;
 int buttonCenter = 1;
 int buttonRight = 1;
+
+static int adc_raw[2][10];
+static int voltage[2][10];
 
 bool is_button_left_pressed(void) {
     return !buttonLeft;
@@ -85,6 +90,28 @@ static void button_gpio_init(void) {
     gpio_isr_handler_add(GPIO_NUM_19, gpio_isr_handler, (void *) GPIO_NUM_19);
     gpio_isr_handler_add(GPIO_NUM_16, gpio_isr_handler, (void *) GPIO_NUM_16);
     gpio_isr_handler_add(GPIO_NUM_4, gpio_isr_handler, (void *) GPIO_NUM_4);
+}
+
+int adc_get_single(void) {
+    ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC_CHANNEL_0, &adc_raw[0][0]));
+    ESP_LOGI(TAG, "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC_CHANNEL_0, adc_raw[0][0]);
+    ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle, adc_raw[0][0], &voltage[0][0]));
+    ESP_LOGI(TAG, "ADC%d Channel[%d] Cali Voltage: %d mV", ADC_UNIT_1 + 1, ADC_CHANNEL_0, voltage[0][0]);
+    return voltage[0][0];
+}
+
+void adc_single_init(void) {
+    adc_oneshot_unit_init_cfg_t init_config1 = {
+        .unit_id = ADC_UNIT_1,
+    };
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config1, &adc1_handle));
+
+    adc_oneshot_chan_cfg_t config = {
+        .atten = ADC_ATTEN_DB_12,
+        .bitwidth = ADC_BITWIDTH_12,
+    };
+
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_0, &config));
 }
 
 
@@ -164,9 +191,6 @@ static void calibrate_adc(adc_cali_handle_t *out_handle) {
 }
 
 static void adc_init(void) {
-    adc_cali_handle = NULL;
-    calibrate_adc(&adc_cali_handle);
-
     adc_handle = NULL;
 
     adc_continuous_handle_cfg_t adc_h_cfg = {
@@ -215,7 +239,9 @@ static void adc_init(void) {
 }
 
 void app_button_init(void) {
-    adc_init(); //Using joystick encoder for now
+    calibrate_adc(&adc_cali_handle);
+    adc_single_init();
+    //adc_init();
     xTaskCreate(adc_task, "adc_task", 4096, NULL, 1, &s_task_handle);
     button_gpio_init();
 }

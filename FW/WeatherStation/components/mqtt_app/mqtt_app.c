@@ -19,8 +19,8 @@ static void log_error_if_nonzero(const char *message, int error_code)
     }
 }
 
-void mqtt_send_message(char *topic, char *payload) {
-    int msg_id = esp_mqtt_client_publish(client, topic, payload, 0, 1, 0);
+int mqtt_send_message(char *topic, char *payload) {
+    return esp_mqtt_client_publish(client, topic, payload, 0, 1, 0);
 }
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
