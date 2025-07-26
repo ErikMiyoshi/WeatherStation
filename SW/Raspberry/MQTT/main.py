@@ -37,11 +37,12 @@ def on_message(client, userdata, msg):
     temperature = data.get("t", None)
     humidity = data.get("h", None)
     pressure = data.get("p", None)
+    voltagebat = data.get("v", None)
 
     add_measure = ("INSERT INTO measures "
-                   "(device, sensorname, sensortemperature, sensorhumidity, sensorpressure) "
-                   "VALUES (%s, %s, %s, %s, %s)")
-    data_measure = (deviceNum, sensor, temperature, humidity, pressure)
+                   "(device, sensorname, sensortemperature, sensorhumidity, sensorpressure, voltagebattery) "
+                   "VALUES (%s, %s, %s, %s, %s, %s)")
+    data_measure = (deviceNum, sensor, temperature, humidity, pressure, voltagebat)
 
     cursor.execute(add_measure, data_measure)
     mysql.commit()

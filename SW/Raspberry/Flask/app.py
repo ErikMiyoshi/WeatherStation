@@ -18,13 +18,12 @@ def data_device(n, sensorname):
     if conn is None:
         return jsonify({"error": "Erro na conexão com o banco"}), 500
     cursor = conn.cursor(dictionary=True)
-    cursor.execute(f"SELECT sensorname, timestamp, sensortemperature, sensorhumidity, sensorpressure FROM measures WHERE device = {n} AND sensorname = \"{sensorname}\" ORDER BY timestamp DESC")
+    cursor.execute(f"SELECT sensorname, timestamp, sensortemperature, sensorhumidity, sensorpressure, voltagebattery FROM measures WHERE device = {n} AND sensorname = \"{sensorname}\" ORDER BY timestamp DESC LIMIT 500")
     rows = cursor.fetchall()
 
     for d in rows:
         d['timestamp'] = d['timestamp'].strftime("%Y-%m-%dT%H:%M:%S")
 
-    print(rows[0]["timestamp"])
     cursor.close()
     conn.close()
     return jsonify(rows)

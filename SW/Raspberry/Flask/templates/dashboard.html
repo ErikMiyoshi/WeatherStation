@@ -10,21 +10,36 @@
     <h1>Weather Station Sensors</h1>
 
     <select id="interval">
+        <option value="30m">Last 30 minutes</option>
         <option value="1h">Last hour</option>
         <option value="6h">Last 6 hours</option>
         <option value="1d">Last day</option>
-        <option value="7d">Last 3 days</option>
+        <option value="3d">Last 3 days</option>
     </select>
 
     <h2>Device 1</h2>
+    <select id="sensorChoice1">
+        <option value="temperature">Temperature</option>
+        <option value="humidity">Humidity</option>
+        <option value="pressure">Pressure</option>
+        <option value="battery">Battery Status</option>
+    </select>
     <div style="width: 800px; height: 500px;">
         <canvas id="tempChartDevice1"></canvas>
     </div>
 
     <h2>Device 2</h2>
+    <select id="sensorChoice2">
+        <option value="temperature">Temperature</option>
+        <option value="humidity">Humidity</option>
+        <option value="pressure">Pressure</option>
+        <option value="battery">Battery Status</option>
+    </select>
     <div style="width: 800px; height: 500px;">
         <canvas id="tempChartDevice2"></canvas>
-    </div>    
+    </div>
+
+
 
     <script>
         async function fetchData(str) { 
@@ -38,6 +53,9 @@
             let start;
 
             switch (interval) {
+            case '30m':
+                start = new Date(now.getTime() - 1 * 30 * 60 * 1000);
+                break;
             case '1h':
                 start = new Date(now.getTime() - 1 * 60 * 60 * 1000);
                 break;
@@ -49,6 +67,7 @@
                 break;
             case '3d':
                 start = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000);
+                console.log("Start", start);
                 break;
             default:
                 start = new Date(0); // sem filtro
@@ -64,46 +83,70 @@
 
             const humidity = data.map(item => item.sensorhumidity);
             const pressure = data.map(item => item.sensorpressure);
-            return { labels, temperature, humidity, pressure};
+
+            const voltage = data.map(item => item.voltagebattery/1000)
+            return { labels, temperature, humidity, pressure, voltage};
         }
 
         const charts = {}
 
-        async function createChart(chartId, deviceNum, interval) {
+        async function createChart(chartId, deviceNum, interval, sensorChoice) {
             const dataaht20 = await fetchData(`http://192.168.15.71:5000/device/${deviceNum}/aht20`);
             const databmp280 = await fetchData(`http://192.168.15.71:5000/device/${deviceNum}/bmp280`);
+            const databattery = await fetchData(`http://192.168.15.71:5000/device/${deviceNum}/battery`);
             const { labels: labels_aht20, temperature: sensorTemperature_aht20, humidity: sensorHumidity_aht20, pressure: sensorPressure_aht20 } = parseData(dataaht20);
             const { labels: labels_bmp280, temperature: sensorTemperature_bmp280, humidity: sensorHumidity_bmp280, pressure: sensorPressure_bmp280 } = parseData(databmp280);
-
+            const { labels: labels_voltage, t, h, p ,voltage} = parseData(databattery);
             const ctx = document.getElementById(chartId).getContext('2d');
 
-            dataAht20 = labels_aht20.map((ts, i) => ({ x: ts, y: sensorTemperature_aht20[i] }));
-            dataBmp280 = labels_bmp280.map((ts, i) => ({ x: ts, y: sensorTemperature_bmp280[i] }));
+            dataTempAht20 = labels_aht20.map((ts, i) => ({ x: ts, y: sensorTemperature_aht20[i] }));
+            dataHumAht20 = labels_aht20.map((ts, i) => ({ x: ts, y: sensorHumidity_aht20[i] }));
+            
+            dataTempBmp280 = labels_bmp280.map((ts, i) => ({ x: ts, y: sensorTemperature_bmp280[i] }));
+            dataPresBmp280 = labels_bmp280.map((ts, i) => ({ x: ts, y: sensorPressure_bmp280[i] }));
+
+            dataBattery = labels_voltage.map((ts,i) => ({x: ts, y: voltage[i]}));
 
             if (charts[chartId]) {
                 charts[chartId].destroy();
             }
 
+            let label, unit, text, data;
+            let dataset = [];
+            if(sensorChoice == "battery"){
+                label = "Battery Voltage";
+                unit = "mV";
+                data = filterData(interval, dataBattery);
+                text = "Voltage (mV)";
+            }
+            if(sensorChoice == "humidity"){
+                label = "Humidity";
+                unit = "%";
+                data = filterData(interval, dataHumAht20);
+                text = "Humidity (%)";
+            }
+            if(sensorChoice == "pressure"){
+                label = "Pressure";
+                unit = "Pa";
+                data = filterData(interval, dataPresBmp280);
+                text = "Pressure (Pa)";
+            }
+            if(sensorChoice == "temperature") {
+                label = "Temperature AHT20";
+                unit = "°C";
+                data = filterData(interval, dataTempAht20);
+                dataset.push({label:label, data:data, borderColor: 'red',backgroundColor: 'red', fill:false, tension:0.1});
+                
+                label = "Temperature BMP280";
+                data = filterData(interval, dataTempBmp280);
+                text = "Temperature  (°C)";
+            }
+            dataset.push({label:label, data:data, borderColor: 'blue',backgroundColor: 'blue', fill:false, tension:0.1});
 
             charts[chartId] = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    datasets: [{
-                    label: 'Temperature AHT20',
-                    data: filterData(interval, dataAht20),
-                    borderColor: 'blue',
-                    backgroundColor: 'blue',
-                    fill: false,
-                    tension: 0.1
-                    },{
-                    label: 'Temperature BMP280',
-                    data: filterData(interval, dataBmp280),
-                    borderColor: 'red',
-                    backgroundColor: 'red',
-                    fill: false,
-                    tension: 0.1
-                    },
-                    ]
+                    datasets: dataset,
                 },
                 options: {
                     parsing: true, // usa dados {x,y} direto
@@ -115,26 +158,39 @@
                         },
                         title: {
                         display: true,
-                        text: 'Hora'
+                        text: 'Time'
                         },
                     },
                     y: {
                         title: {
                         display: true,
-                        text: '°C'
+                        text: text,
                         },
                     }
                     }
                 }
-                });
+            });
         }
+        
+        let interval = '1h';
+        let sensorChoice1 = 'temperature';
+        let sensorChoice2 = 'temperature';
 
-        createChart('tempChartDevice1', 1, '1h');
-        createChart('tempChartDevice2', 2, '1h');
+        createChart('tempChartDevice1', 1, interval, sensorChoice1);
+        createChart('tempChartDevice2', 2, interval, sensorChoice2);
 
         document.getElementById('interval').addEventListener('change', function () {
-            createChart('tempChartDevice1', 1, this.value);
-            createChart('tempChartDevice2', 2, this.value);
+            interval = this.value;
+            createChart('tempChartDevice1', 1, this.value, sensorChoice1);
+            createChart('tempChartDevice2', 2, this.value, sensorChoice2);
+        });
+        document.getElementById('sensorChoice1').addEventListener('change', function () {
+            sensorChoice1 = this.value;
+            createChart('tempChartDevice1', 1, interval, this.value);
+        });
+        document.getElementById('sensorChoice2').addEventListener('change', function () {
+            sensorChoice2 = this.value;
+            createChart('tempChartDevice2', 2, interval, this.value);
         });
 
     </script>
