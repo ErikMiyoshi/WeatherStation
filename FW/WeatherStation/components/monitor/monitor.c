@@ -36,11 +36,10 @@ void monitor_task(void *arg) {
                              //bit 2 -> adc battery
     while(1) {
         //ESP_LOGI(TAG,"Monitor Task");
-        lv_turn_off();
         if(esp_timer_get_time() - time > 10000000) {
             time = esp_timer_get_time();
             ESP_LOGI(TAG,"Turn display off");
-            lv_turn_off();
+            //lv_turn_off();
         }
         if(xQueueReceive(queues.queue_aht20, &sensors_data.aht20_data, 0)) {
             ESP_LOGI(TAG,"Received data from queue AHT20");
@@ -58,20 +57,20 @@ void monitor_task(void *arg) {
             if(mqtt_send_message("measure/", payload) > 0)
                 messageSent |= (1 << 1);
         }
-        lv_set_battery_value(battery_get_voltage());
+        //lv_set_battery_value(battery_get_voltage());
         if(is_button_center_pressed()) {
             ESP_LOGI(TAG,"Button center pressed");
-            menu_handle_input(0,0,1);
+            //menu_handle_input(0,0,1);
             time = esp_timer_get_time();
         }
         if(is_button_left_pressed()) {
             ESP_LOGI(TAG,"Button left pressed");
-            menu_handle_input(1,0,0);
+            //menu_handle_input(1,0,0);
             time = esp_timer_get_time();
         }
         if(is_button_right_pressed()) {
             ESP_LOGI(TAG,"Button right pressed");
-            menu_handle_input(0,1,0);
+            //menu_handle_input(0,1,0);
             time = esp_timer_get_time();
         }
         if(batteryOperated) {

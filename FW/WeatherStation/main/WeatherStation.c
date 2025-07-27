@@ -87,9 +87,9 @@ void app_main(void)
     aht20_init(queue_aht20);
     bmp280_init(queue_bmp280);
     app_button_init();
-    display_init();
+    //display_init();
     monitor_init(queue_aht20,queue_bmp280, batOp);
-    menu_init();
+    //menu_init();
 
     int i = 0;
 
