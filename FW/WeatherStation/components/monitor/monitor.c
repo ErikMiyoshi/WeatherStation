@@ -73,7 +73,7 @@ void monitor_task(void *arg) {
             //menu_handle_input(0,1,0);
             time = esp_timer_get_time();
         }
-        if(batteryOperated) {
+        if(batteryOperated && ((messageSent >> 2) & 1) == 0) {
             int bVoltage = adc_get_single();
             ESP_LOGI(TAG,"ADC reading: %dV", adc_get_single());
             char payload[100];
