@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Weather Dashboard</h1>
+</header>
+
+<div class="row">
+    <div class="side">
+        <ul>
+        </ul>
+    </div>
+    <div class="main">
+        <h2>Weather Information</h2>
+        <button id="updateBtn">update</button>
+        <div class="main-container">
+            <div class="info"><p>Temperature</p><p id="lastTemperature"></p></div>
+            <div class="info"><p>Humidity</p><p id="lastHumidity"></p></div>
+            <div class="info"><p>Pressure</p><p id="lastPressure"></p></div>
+        </div>
+        <p>Last time updated: </p><p id="lastTimeUpdated"></p>
+        <p>Current battery voltage: </p><p id="lastBattery"></p>
+        <div class="main-charts">
+            <p>Charts</p>
+            <select id="interval">
+                <option value="30m">Last 30 minutes</option>
+                <option value="1h">Last hour</option>
+                <option value="6h">Last 6 hours</option>
+                <option value="1d">Last day</option>
+                <option value="3d">Last 3 days</option>
+            </select>
+
+            <h2>Device 2</h2>
+            <select id="sensorChoice2">
+                <option value="temperature">Temperature</option>
+                <option value="humidity">Humidity</option>
+                <option value="pressure">Pressure</option>
+                <option value="battery">Battery Status</option>
+            </select>
+            <div style="width: 800px; height: 500px;">
+                <canvas id="chartDevice2"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <p>This project is available on Github: <a href="https://github.com/ErikMiyoshi/WeatherStation" target="_blank">https://github.com/ErikMiyoshi/WeatherStation</a></p>
+</footer>
+
+    <script src="script.js"></script>
+    <script>updateInfo()</script>
+
+</body>
+</html>
