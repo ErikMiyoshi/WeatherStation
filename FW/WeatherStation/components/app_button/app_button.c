@@ -25,10 +25,21 @@ adc_continuous_handle_t adc_handle = NULL;
 adc_cali_handle_t adc_cali_handle = NULL;
 
 int v_joystick;
-int button = 1;
+int v_bat;
+int button1 = 1;
+int button2 = 1;
+int button3 = 1;
 
-bool is_button_pressed(void) {
-    return !button;
+bool is_button1_pressed(void) {
+    return !gpio_get_level(GPIO_NUM_19);
+}
+
+bool is_button2_pressed(void) {
+    return !gpio_get_level(GPIO_NUM_16);
+}
+
+bool is_button3_pressed(void) {
+    return !gpio_get_level(GPIO_NUM_4);
 }
 
 bool is_joystick_pressed_right(void) {
@@ -45,10 +56,20 @@ bool is_joystick_pressed_left(void) {
     return false;
 }
 
+int get_bat_value(void) {
+    return v_bat;
+}
+
 static void gpio_isr_handler(void* arg) {
     uint32_t gpio_num = (uint32_t) arg;
     if(gpio_num == GPIO_NUM_19) {
-        button = gpio_get_level(gpio_num);
+        button1 = gpio_get_level(gpio_num);
+    }
+    if(gpio_num == GPIO_NUM_16) {
+        button2 = gpio_get_level(gpio_num);
+    }
+    if(gpio_num == GPIO_NUM_4) {
+        button3 = gpio_get_level(gpio_num);
     }
 }
 
@@ -57,11 +78,15 @@ static void button_gpio_init(void) {
     cfg.intr_type = GPIO_INTR_ANYEDGE;
     cfg.mode = GPIO_MODE_INPUT;
     cfg.pull_up_en = GPIO_PULLUP_ENABLE;
-    cfg.pin_bit_mask = (1ULL << GPIO_NUM_19);
+    cfg.pin_bit_mask = (1ULL << GPIO_NUM_19) | (1ULL << GPIO_NUM_16) | (1ULL << GPIO_NUM_4);
     ESP_ERROR_CHECK(gpio_config(&cfg));
     
+    ESP_ERROR_CHECK(gpio_dump_io_configuration(stdout, (1ULL << GPIO_NUM_19) | (1ULL << GPIO_NUM_16) | (1ULL << GPIO_NUM_4)));
+
     gpio_install_isr_service(0);
     gpio_isr_handler_add(GPIO_NUM_19, gpio_isr_handler, (void *) GPIO_NUM_19);
+    gpio_isr_handler_add(GPIO_NUM_16, gpio_isr_handler, (void *) GPIO_NUM_16);
+    gpio_isr_handler_add(GPIO_NUM_4, gpio_isr_handler, (void *) GPIO_NUM_4);
 }
 
 
@@ -87,16 +112,16 @@ static void adc_task(void *args) {
                 uint32_t data = p->type1.data;
                 /* Check the channel number validation, the data is invalid if the channel num exceed the maximum channel */
                 if (chan_num < SOC_ADC_CHANNEL_NUM(ADC_UNIT)) {
-                    adc_cali_raw_to_voltage(adc_cali_handle,data, &v_joystick);
+                    adc_cali_raw_to_voltage(adc_cali_handle,data, &v_bat);
                     // if(chan_num == 0) {
                     // ESP_LOGI(TAG, "C: %"PRIu32", V: %"PRIx32", Cali: %d", chan_num, data, v_joystick);
                     // }
-                    //ESP_LOGI(TAG, "Unit: %d, Channel: %"PRIu32", Value: %"PRIx32, ADC_UNIT, chan_num, data);
+                    ESP_LOGI(TAG, "Unit: %d, Channel: %"PRIu32", Value: %d", ADC_UNIT, chan_num, v_bat);
                 } else {
                     ESP_LOGW(TAG, "Invalid data");
                 }
             }
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+            vTaskDelay(5000 / portTICK_PERIOD_MS);
         } else if (ret == ESP_ERR_TIMEOUT) {
             //We try to read `EXAMPLE_READ_LEN` until API returns timeout, which means there's no available data
             break;

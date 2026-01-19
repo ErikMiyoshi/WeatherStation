@@ -22,6 +22,7 @@ aht20_measure aht20;
 bmp280_measure bmp280;
 
 QueueHandle_t queue_aht;
+QueueHandle_t queue_bmp;
 
 static void aht20_task(void *args) {
     while(1) {
@@ -34,7 +35,6 @@ static void aht20_task(void *args) {
         ESP_LOGI(TAG20, "%-20s: %d", "humidity is", aht20.aht20_humidity_i16);
 
         if( pdPASS == xQueueSend(queue_aht, &aht20,portMAX_DELAY)) {
-            ESP_LOGI(TAG,"Send data to queue AHT20");
         } else {
             ESP_LOGI(TAG,"Send data to queue AHT20 failed");
         }
@@ -70,12 +70,19 @@ static void bmp280_task(void *args) {
 
         ESP_ERROR_CHECK(bmx280_readoutFloat(bmx280, &bmp280.bmp280_temperature, &bmp280.bmp280_pressure, &bmp280.bmp280_humidity));
         ESP_LOGI(TAG280, "Read Values: temp = %f, pres = %f, hum = %f", bmp280.bmp280_temperature, bmp280.bmp280_pressure, bmp280.bmp280_humidity);
+
+        if( pdPASS == xQueueSend(queue_bmp, &bmp280,portMAX_DELAY)) {
+        } else {
+            ESP_LOGI(TAG280,"Send data to queue BMP280 failed");
+        }
+
         vTaskDelay(BMP280_INTERVAL / portTICK_PERIOD_MS);
         }
     }
 }
 
 void bmp280_init(QueueHandle_t queue_bmp280) {
+    queue_bmp = queue_bmp280;
     i2c_master_bus_handle_t i2c_master_handle;
     ESP_ERROR_CHECK(i2c_master_get_bus_handle(I2C_MASTER_NUM, &i2c_master_handle));
 

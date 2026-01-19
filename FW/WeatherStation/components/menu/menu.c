@@ -8,6 +8,7 @@ typedef enum {
     MENU_STATE_MAIN,
     MENU_STATE_MONITOR,
     MENU_STATE_TIME,
+    MENU_STATE_ADC,
 } menu_state_t;
 
 static menu_state_t current_state = MENU_STATE_MAIN;
@@ -18,28 +19,36 @@ void menu_handle_input(bool up, bool down, bool ok) {
     switch (current_state) {
         case MENU_STATE_MAIN:
             if (up || down) {
-                selected_index = (selected_index + (down ? 1 : -1) + 2) % 2;
+                selected_index = (selected_index + (down ? 1 : -1) + 3) % 3;
                 menu_view_draw_main(selected_index);
             }
             if (ok) {
                 if (selected_index == 0) {
-                    ESP_LOGI(TAG,"Enter sensor page");
                     current_state = MENU_STATE_MONITOR;
-                    disp_show_sensors_value();
-                } else {
+                } else if (selected_index == 1) {
                     current_state = MENU_STATE_TIME;
-                    disp_show_time();
+                } else {
+                    current_state = MENU_STATE_ADC;
                 }
             }
             break;
 
         case MENU_STATE_MONITOR:
+            disp_show_sensors_value();
             if (ok) {
                 current_state = MENU_STATE_MAIN;
                 menu_view_draw_main(selected_index);
             }
             break;
         case MENU_STATE_TIME:
+            disp_show_time();
+            if (ok) {
+                current_state = MENU_STATE_MAIN;
+                menu_view_draw_main(selected_index);
+            }
+            break;
+        case MENU_STATE_ADC:
+            disp_show_bat_status();
             if (ok) {
                 current_state = MENU_STATE_MAIN;
                 menu_view_draw_main(selected_index);
