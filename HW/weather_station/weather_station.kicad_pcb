@@ -78,7 +78,7 @@
 		(tenting front back)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
-			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_02000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
 			(usegerberattributes yes)
@@ -96,24 +96,24 @@
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
 			(pdf_metadata yes)
-			(pdf_single_document no)
+			(pdf_single_document yes)
 			(dxfpolygonmode yes)
 			(dxfimperialunits yes)
 			(dxfusepcbnewfont yes)
 			(psnegative no)
 			(psa4output no)
-			(plot_black_and_white yes)
+			(plot_black_and_white no)
 			(sketchpadsonfab no)
 			(plotpadnumbers no)
 			(hidednponfab no)
 			(sketchdnponfab yes)
 			(crossoutdnponfab yes)
 			(subtractmaskfromsilk yes)
-			(outputformat 1)
+			(outputformat 4)
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "Gerbers/")
+			(outputdirectory "../")
 		)
 	)
 	(net 0 "")
@@ -736,7 +736,7 @@
 		(path "/440a7db7-872b-412b-ad13-11e855af11d5")
 		(sheetname "/")
 		(sheetfile "weather_station.kicad_sch")
-		(attr smd exclude_from_bom dnp)
+		(attr smd exclude_from_bom)
 		(fp_line
 			(start -7.5 -7.5)
 			(end 6.5 -7.5)
@@ -9162,7 +9162,61 @@
 				"TgBEAF8AMgAwADUALQAwADAAMAA1ADYAXwBEAEIAXwBFAE4ALgBwAGQAZgAsACAAcwBjAHIAaQBw"
 				"AHQALQBnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAGgAdAB0AHAAcwA6AC8ALwBnAGkA"
 				"dABsAGEAYgAuAGMAbwBtAC8AawBpAGMAYQBkAC8AbABpAGIAcgBhAHIAaQBlAHMALwBrAGkAYwBh"
-				"AA=="
+				"AAAAAAAAAHBHRlaKAgAAAQAAAAAAAAAAAAAAAAAAAOcMAAAMAAAA5wwAABYAAAAYAAAAAAAAAHBH"
+				"RlaKAgAAAgAAAAAAAAAAAAAAAAAAAOcMAAAMAAAA5wwAABYAAABiBAAAAAAAAGitTX+KAgAA5VIA"
+				"AAAAAADoqk1/igIAAGMEAAAAAAAAaK1Nf4oCAADlUgAAAAAAAGirTX+KAgAAZAQAAAAAAABorU1/"
+				"igIAAOVSAAAAAAAAiKtNf4oCAABlBAAAAAAAAGitTX+KAgAA5VIAAAAAAACoq01/igIAAGYEAAAA"
+				"AAAAaK1Nf4oCAADlUgAAAAAAAMirTX+KAgAAZwQAAAAAAABorU1/igIAAOVSAAAAAAAA6KtNf4oC"
+				"AABrBAAAAAAAAGitTX+KAgAA5VIAAAAAAAAIrE1/igIAABgAAAAAAAAAcEdGVooCAAABAAAAAAAA"
+				"AAAAAAAAAAAA5wwAAAwAAADnDAAAFgAAABgAAAAAAAAA8FLRgIoCAAABAAAAAAAAAAAAAAAAAAAA"
+				"5wwAABcAAADnDAAAIQAAABUAAAAAAAAASKxNf4oCAADwUtGAigIAAAEAAAAAAAAA5wwAAAwAAADn"
+				"DAAAIQAAABgAAAAAAAAA8KvNYooCAAABAAAAAAAAAAAAAAAAAAAA5wwAACIAAADnDAAAJgAAABUA"
+				"AAAAAAAAqKxNf4oCAADwq81iigIAAAEAAAAAAAAA5wwAAAwAAADnDAAAJgAAABgAAAAAAAAAcKY8"
+				"dPl/AAABAAAAAAAAAAAAAAAAAAAA5wwAACcAAADnDAAAKwAAABEAAAAAAAAACK1Nf4oCAADQqU1/"
+				"igIAAAAAAAAAAAAA5wwAAAwAAADnDAAALAAAABgAAAAAAAAAcEdGVooCAAABAAAAAAAAAAAAAAAA"
+				"AAAA5wwAAAwAAADnDAAAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				"AP//////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"////////////////////////////////////////////////////////////////////////////"
+				"/w=="
 			)
 			(uuid "46e29b09-63e9-4dc5-8030-05d57d6a505a")
 		)
@@ -24951,7 +25005,7 @@
 		(path "/47e14cfa-c87b-4e61-a9ba-6bbe942c364f")
 		(sheetname "/")
 		(sheetfile "weather_station.kicad_sch")
-		(attr smd exclude_from_bom dnp)
+		(attr smd)
 		(fp_line
 			(start -9.12 9.88)
 			(end -8.12 9.88)
@@ -25549,7 +25603,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "97d547d8-edac-482a-996e-6638de0d839b")
 		)
 		(pad "39" smd rect
 			(at -2.205 -0.91 270)
@@ -25558,7 +25612,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "1d7c1e79-ddb0-4da1-a93f-99b72b9596bc")
 		)
 		(pad "39" thru_hole circle
 			(at -2.205 -0.1475 270)
@@ -25571,7 +25625,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "fd55e5f9-793c-4850-8b0e-91a28df4ff2f")
 		)
 		(pad "39" smd rect
 			(at -2.205 0.615 270)
@@ -25580,7 +25634,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "480956ed-4008-42bc-98f2-dce7acb9d8bb")
 		)
 		(pad "39" thru_hole circle
 			(at -1.4425 -2.435 270)
@@ -25593,7 +25647,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "cbb79dc1-8df5-4e3d-939e-16411e4a0c6b")
 		)
 		(pad "39" thru_hole circle
 			(at -1.4425 -0.91 270)
@@ -25606,7 +25660,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "29578799-8230-49d3-83ef-8b28ad3377a6")
 		)
 		(pad "39" thru_hole circle
 			(at -1.4425 0.615 270)
@@ -25619,7 +25673,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "a144f577-8a10-422b-9739-9f8bcbd6ddf5")
 		)
 		(pad "39" smd rect
 			(at -0.68 -2.435 270)
@@ -25628,7 +25682,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "9bc35b89-ea43-4e01-affc-6f992ad1f7a1")
 		)
 		(pad "39" thru_hole circle
 			(at -0.68 -1.6725 270)
@@ -25641,7 +25695,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "463bc7af-e8cb-4027-88dc-043467834557")
 		)
 		(pad "39" smd rect
 			(at -0.68 -0.91 270)
@@ -25650,7 +25704,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "10a79e4c-a205-499a-a95b-8b0f83819d47")
 		)
 		(pad "39" smd rect
 			(at -0.68 -0.91 270)
@@ -25661,7 +25715,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "4c8c685c-ef1c-41a8-8bdd-1b26ead789d8")
 		)
 		(pad "39" thru_hole circle
 			(at -0.68 -0.1475 270)
@@ -25674,7 +25728,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "9a91148d-4f9a-418a-aed7-2a5c2ae8a714")
 		)
 		(pad "39" smd rect
 			(at -0.68 0.615 270)
@@ -25683,7 +25737,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "4ed24d89-373e-4ea9-bbf9-755ad60aabbd")
 		)
 		(pad "39" thru_hole circle
 			(at 0.0825 -2.435 270)
@@ -25696,7 +25750,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "833957eb-a88e-4a12-a6bc-1d307ea53572")
 		)
 		(pad "39" thru_hole circle
 			(at 0.0825 -0.91 270)
@@ -25709,7 +25763,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "8ba4d976-d423-4af5-8ffe-b3b0877fea2a")
 		)
 		(pad "39" thru_hole circle
 			(at 0.0825 0.615 270)
@@ -25722,7 +25776,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "3ee7e358-f721-427c-a34e-015780458f11")
 		)
 		(pad "39" smd rect
 			(at 0.845 -2.435 270)
@@ -25731,7 +25785,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "af44dc9f-b58e-4add-b8f2-a90d4a91ee19")
 		)
 		(pad "39" thru_hole circle
 			(at 0.845 -1.6725 270)
@@ -25744,7 +25798,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "110fd573-280c-4b3b-a865-30b75f62f9aa")
 		)
 		(pad "39" smd rect
 			(at 0.845 -0.91 270)
@@ -25753,7 +25807,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "60336205-94b1-4330-aad5-d3c7a919e843")
 		)
 		(pad "39" thru_hole circle
 			(at 0.845 -0.1475 270)
@@ -25766,7 +25820,7 @@
 			(pinfunction "GND")
 			(pintype "power_in")
 			(zone_connect 2)
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "38a10c6d-60a8-410d-b64b-02e063165844")
 		)
 		(pad "39" smd rect
 			(at 0.845 0.615 270)
@@ -25775,7 +25829,7 @@
 			(net 2 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "029f16d1-c928-4948-88d0-6fb951a0d804")
+			(uuid "e2de048b-90dc-4450-afbd-30335c3b21f3")
 		)
 		(zone
 			(net 0)
@@ -26581,7 +26635,7 @@
 		(path "/a471fcdd-5eec-4868-96d6-fc41d1b68c1d")
 		(sheetname "/")
 		(sheetfile "weather_station.kicad_sch")
-		(attr smd exclude_from_bom dnp)
+		(attr smd exclude_from_bom)
 		(fp_line
 			(start -8.25 8.75)
 			(end 8.25 8.75)
@@ -26964,7 +27018,7 @@
 		(path "/7b8b6b05-2ff6-4b0f-b5e8-bed515d9727f")
 		(sheetname "/")
 		(sheetfile "weather_station.kicad_sch")
-		(attr smd exclude_from_bom dnp)
+		(attr smd exclude_from_bom)
 		(fp_line
 			(start 5.19 1.38)
 			(end 5.19 0)

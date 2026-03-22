@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "weather_station_lib")(type "KiCad")(uri "C:/Users/erikm/Documents/Projects/github_projects/WeatherStation/HW/weather_station_lib.pretty")(options "")(descr ""))
+)

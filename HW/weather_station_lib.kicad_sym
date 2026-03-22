@@ -549,7 +549,7 @@
 				)
 			)
 		)
-		(property "Footprint" "weather_station_lib:ESP32-WROOM-32 or ESP32S"
+		(property "Footprint" "weather_station_lib:ESP32-WROOM-32 or ESP32S_no_paste"
 			(at 0 0 0)
 			(effects
 				(font

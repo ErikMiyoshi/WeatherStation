@@ -3957,7 +3957,7 @@
 					)
 				)
 			)
-			(property "Footprint" "weather_station_lib:ESP32-WROOM-32 or ESP32S"
+			(property "Footprint" "weather_station_lib:ESP32-WROOM-32 or ESP32S_no_paste"
 				(at 0 0 0)
 				(effects
 					(font
@@ -14105,7 +14105,7 @@
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "440a7db7-872b-412b-ad13-11e855af11d5")
 		(property "Reference" "U4"
 			(at 266.7 120.396 0)
@@ -14244,9 +14244,9 @@
 		(at 193.04 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "47e14cfa-c87b-4e61-a9ba-6bbe942c364f")
 		(property "Reference" "U1"
@@ -16215,7 +16215,7 @@
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b8b6b05-2ff6-4b0f-b5e8-bed515d9727f")
 		(property "Reference" "U6"
@@ -18384,7 +18384,7 @@
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a471fcdd-5eec-4868-96d6-fc41d1b68c1d")
 		(property "Reference" "U5"
